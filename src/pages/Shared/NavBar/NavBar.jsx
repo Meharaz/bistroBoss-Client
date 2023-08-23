@@ -13,7 +13,7 @@ const NavBar = () => {
             .then(() => { })
             .catch(error => console.log(error));
     }
-    
+
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
@@ -29,7 +29,10 @@ const NavBar = () => {
         </li>
         {
             user ? <>
-                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                <li>
+                    <img src={user.photoURL} className="h-20 w-20" />
+                    <button onClick={handleLogOut} className=" my-3 btn btn-ghost">LogOut</button>
+                </li>
             </> : <>
                 <li><Link to="/login">Login</Link></li>
             </>
